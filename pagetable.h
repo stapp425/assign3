@@ -7,20 +7,18 @@
 
 typedef struct pte {
   int frame_num;
-  int ref_count;
-  Frame *frame;
+  int valid;
+  int referenced;
+  unsigned int ref_count;
 } PageTableEntry;
 
 typedef struct pt {
-  int entries_num;
-  int page_fault_count;
-  PageTableEntry entries[];
+  unsigned int page_fault_count;
+  PageTableEntry entries[PT_ENTRIES];
 } PageTable;
 
-PageTable* create_page_table(int num_pages);
+uint64_t virtual_to_physical_addr(uint64_t v_addr, int frame_num);
 
-void allocate_physical_address(PageTable *pt);
+int map_page_to_frame(PageTable *pt, int page_num, int frame_num);
 
-uint64_t virtual_to_physical_addr(uint64_t v_addr);
-
-void handle_page_fault(PageTable *pt);
+int handle_page_fault(PageTable *pt);

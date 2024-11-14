@@ -1,0 +1,6 @@
+{
+    "files.associations": {
+        "pagetable.h": "c",
+        "stdint.h": "c"
+    }
+}
