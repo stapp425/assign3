@@ -1,5 +1,26 @@
-md5sum part1-output
+$ md5sum part1-output
 ceabc02825a5b908e474b053074ab53c *part1-output
 
 ----------------------------------------------
 
+$ md5sum part2-output
+c95b27848ae8d4354d87678d075001f7 *part2-output
+
+----------------------------------------------
+
+Part 2 Page Fault Count: 3210
+
+----------------------------------------------
+
+CONTRIBUTIONS
+I have done most of the structure of this project, but I have received a hint from Dr. Silvestro on how I should structure my functions for how the program retrieves a valid frame number.
+Everything is done to the best of my ability, so I am confident that my implementation of a page table is almost correct.
+Some considerations that I have for parts of my application is the managing the valid bit of pages; if my page fault count is not correct, it could be due to that portion.
+Some challenges that I have encountered from implementing this application is my lack of knowledge in both the intricacies of a page table and the C programming language as a whole.
+Before working on this project, I only had experience in creating an executable from only 2 files, but since this project required several .c and .h files, I needed to delve deeper of these inner machinations.
+
+----------------------------------------------
+
+For a sample file with all the transaction statuses that have been printed, run the command below.
+
+./part2 SEQUENCE_FILE OUTPUT_NAME > OUTPUT_LOG_NAME.txt
